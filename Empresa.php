@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empresa - MacLongo</title>
-    <link rel="stylesheet" href="/css/styleMac.css">
+    <link rel="stylesheet" href="styleMac.css">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
         <div class="bar"></div>
     </div>
     <ul id="nav-links">
-        <li><a href="/index.php" onclick="toggleMenu()">Home</a></li>
+        <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
         <li><a href="/php/Servicos.php" onclick="toggleMenu()">Serviços</a></li>
         <li><a href="/php/Empresa.php" onclick="toggleMenu()">Empresa</a></li>
         <li><a href="#contactos" onclick="toggleMenu()">Contactos</a></li>
