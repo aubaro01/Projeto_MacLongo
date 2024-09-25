@@ -4,6 +4,8 @@ body, html {
     padding: 0;
     font-family: Arial, sans-serif;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Evitar rolagem lateral */
 }
 
 /* Header Styling */
@@ -16,10 +18,11 @@ header {
     color: white;
     position: sticky;
     top: 0;
+    width: 100%;
     z-index: 100;
 }
 
-/* Estilos da NavBar */
+/* Navbar Styling */
 nav {
     background-color: #333;
     padding: 10px;
@@ -54,23 +57,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Estilos para o botão de login */
-.login-btn {
-    border: 1px solid white;
-    padding: 5px 15px;
-    border-radius: 5px;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.login-btn:hover {
-    background-color: #555;
-    border-color: #888;
-}
-
-/* Estilos para o ícone de menu (hambúrguer) */
+/* Responsividade da Navbar */
 .menu-icon {
     display: none;
     flex-direction: column;
@@ -85,31 +72,7 @@ nav ul li a:hover {
     transition: 0.4s;
 }
 
-/* Efeito de transição ao abrir e fechar o ícone */
-.menu-icon.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.menu-icon.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-icon.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Estilos de responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: row; /* Manter a direção do layout */
-        align-items: center; /* Centralizar os itens */
-    }
-    
-    /* Espaçamento entre logo e barra */
-    .logo {
-        margin-right: 150px; /* Espaçamento ajustável */
-    }
-
     nav ul {
         flex-direction: column;
         position: absolute;
@@ -123,13 +86,8 @@ nav ul li a:hover {
     }
     
     nav ul.active {
-        max-height: 500px; /* Altura suficiente para exibir o menu */
+        max-height: 500px;
         opacity: 1;
-    }
-
-    nav ul li {
-        text-align: left;
-        width: 100%;
     }
 
     .menu-icon {
@@ -137,39 +95,19 @@ nav ul li a:hover {
     }
 }
 
-
-/* Efeito de transição ao abrir e fechar o ícone */
-.menu-icon.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.menu-icon.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-icon.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-
-
-/* Seção Home */
-
-
+/* Home Section */
 .section-home {
     height: 60vh; 
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/industrial-background.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
     padding: 0 20px;
 }
-
 
 .section-home h1 {
     font-size: 3em; 
@@ -180,26 +118,6 @@ nav ul li a:hover {
     animation: fadeIn 1.5s ease-out;
 }
 
-.section-home p {
-    font-size: 1.3em; 
-    line-height: 1.5; 
-    max-width: 700px; 
-    margin: 0 auto;
-    animation: fadeIn 2s ease-out 0.5s;
-}
-
-/* Animação de fadeIn */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 @media (max-width: 768px) {
     .section-home {
         height: 50vh; 
@@ -208,120 +126,29 @@ nav ul li a:hover {
     .section-home h1 {
         font-size: 2.2em;
     }
-
-    .section-home p {
-        font-size: 1.1em;
-    }
 }
 
-
-/* Seção de Produtos */
-
-.produtos-container {
-    padding: 40px;
-    background-color: #f8f8f8;
-    text-align: center;
-}
-
-.produtos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px 0;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.produtos-grid .produto {
-    padding: 20px;
-    text-align: center;
-}
-
-
-
-/* Estilo dos cartões de serviço */
-/* Melhorando o layout da seção de serviços */
+/* Cards de Serviço */
 .container_service {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; /* Centraliza os cartões */
     padding: 50px;
-    background-color: #f9f9f9; /* Cor de fundo um pouco mais clara */
-    gap: 40px; /* Maior espaçamento entre os cartões */
+    background-color: #f9f9f9;
+    gap: 40px;
 }
 
-/* Estilo refinado dos cartões */
 .service_card {
     width: 100%;
     max-width: 350px;
     background-color: white;
-    border-radius: 16px; /* Bordas mais suaves */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave e difusa */
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    margin: 20px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
 }
 
-/* Efeito hover com elevação e leve rotação */
-.service_card:hover {
-    transform: translateY(-8px) rotate(0.5deg); /* Leve elevação e rotação */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
-    border-radius: 20px; /* Bordas levemente mais arredondadas no hover */
-}
-
-/* Título dos serviços */
-.service_card h3 {
-    font-size: 1.5em; /* Tamanho maior para maior destaque */
-    color: #333;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-/* Texto de descrição */
-.service_card p {
-    font-size: 1.1em; /* Um pouco maior para facilitar a leitura */
-    color: #666;
-    line-height: 1.8; /* Espaçamento entre linhas para maior legibilidade */
-    margin-bottom: 25px;
-}
-
-/* Botão Saiba Mais refinado */
-.service-button {
-    padding: 12px 28px;
-    background: transparent; /* Fundo transparente para destacar a borda */
-    color: #007BFF; /* Cor de texto azul */
-    border: 2px solid #007BFF; /* Borda sólida azul */
-    border-radius: 30px; /* Bordas arredondadas */
-    font-size: 0.9em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Suavizando todas as transições */
-    text-align: center;
-}
-
-/* Efeito hover no botão */
-.service-button:hover {
-    background-color: #007BFF; /* Fundo azul no hover */
-    color: white; /* Texto branco no hover */
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); /* Sombra suave no hover */
-    transform: translateY(-3px); /* Leve elevação ao passar o mouse */
-}
-
-/* Efeito de foco para acessibilidade */
-.service-button:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.8); /* Sombra de foco */
-}
-
-/* Efeito ativo ao clicar no botão */
-.service-button:active {
-    transform: translateY(1px); /* Leve redução ao pressionar */
-    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.4); /* Reduz a sombra ao clicar */
-}
-
-/* Ajustes responsivos para dispositivos menores */
 @media (max-width: 768px) {
     .container_service {
         flex-direction: column;
@@ -334,145 +161,6 @@ nav ul li a:hover {
     }
 }
 
-
-/* botão saiba mais  */
-.service-button {
-    padding: 12px 28px;
-    background: transparent; 
-    color: black; 
-    border: 2px solid black; 
-    border-radius: 30px; 
-    font-size: 0.9em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease; 
-    text-align: center;
-}
-
-.service-button:hover {
-    background-color: #007BFF; 
-    color: white;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); 
-    transform: translateY(-3px);
-}
-
-.service-button:focus {
-    outline: none; 
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.8); 
-}
-
-
-
-/* Seção de contato */
-.contact_container {
-    background-color: #f9f9f9; /* Cor de fundo mais clara */
-    padding: 60px;
-    display: flex;
-    justify-content: center; /* Centraliza o formulário */
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px; /* Espaçamento entre elementos */
-}
-
-/* Estilo do formulário de contato */
-.contact_form {
-    width: 100%;
-    max-width: 500px;
-    background-color: white;
-    padding: 40px;
-    border-radius: 12px; /* Bordas mais suaves */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra difusa */
-    transition: box-shadow 0.3s ease;
-}
-
-.contact_form:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais intensa no hover */
-}
-
-/* Estilizando os campos de entrada */
-input, textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 25px;
-    border: 1px solid #ccc;
-    border-radius: 8px; /* Bordas arredondadas para suavizar */
-    background-color: #f4f4f4; /* Fundo mais claro */
-    font-size: 1em;
-    color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
-}
-
-/* Efeito de foco nos campos de entrada */
-input:focus, textarea:focus {
-    border-color: #007BFF;
-    background-color: white; /* O fundo fica branco ao focar */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra azul ao focar */
-    outline: none;
-}
-
-/* Botão de envio */
-.button input[type="submit"] {
-    background-color: #007BFF; /* Fundo azul */
-    color: white; /* Texto branco */
-    padding: 12px 28px;
-    font-size: 1em;
-    font-weight: bold;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 123, 255, 0.2); /* Sombra leve */
-}
-
-/* Efeito hover no botão de envio */
-.button input[type="submit"]:hover {
-    background-color: #0056b3; /* Azul mais escuro no hover */
-    transform: translateY(-2px); /* Leve elevação no hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 123, 255, 0.3); /* Sombra mais forte no hover */
-}
-
-/* Efeito de clique */
-.button input[type="submit"]:active {
-    transform: translateY(1px); /* Leve redução ao clicar */
-    box-shadow: 0 2px 6px rgba(0, 0, 123, 255, 0.2); /* Sombra reduzida no clique */
-}
-
-/* Ajustes responsivos */
-@media (max-width: 768px) {
-    .contact_form {
-        padding: 30px;
-        max-width: 100%;
-    }
-
-    input, textarea {
-        padding: 12px;
-    }
-
-    .button input[type="submit"] {
-        width: 100%;
-    }
-}
-
-
-/* Social Media */
-.social-media {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.social-media a img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.social-media a img:hover {
-    transform: scale(1.2);
-    filter: brightness(1.2);
-}
-
 /* Footer */
 footer {
     background-color: #2c2c2c;
@@ -482,38 +170,8 @@ footer {
     font-size: 14px;
 }
 
-footer a {
-    color: #007BFF;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-footer a:hover {
-    color: #0056b3;
-}
-
-.footer-status p {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-
-/* Media Queries */
 @media (max-width: 768px) {
-    .nav_items {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        background-color: #444;
-    }
-
     .nav_items.active {
-        display: flex;
-    }
-
-    .menu-toggle {
         display: flex;
     }
 
@@ -521,16 +179,7 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 
-    .container_service {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .contact_form {
         padding: 20px;
-    }
-
-    .nav-logo {
-        height: 40px;
     }
 }
