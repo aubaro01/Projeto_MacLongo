@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços - MacLongo</title>
     <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style_Pages.css">
+    <link rel="stylesheet" href="style_Pages.css">
 </head>
 <body>
 
@@ -18,10 +18,10 @@
         <div class="bar"></div>
     </div>
     <ul id="nav-links">
-        <li><a href="/index.php" onclick="toggleMenu()">Home</a></li>
+        <li><a href="index.php" onclick="toggleMenu()">Home</a></li>
         <li><a href="/php/Produtos.php" onclick="toggleMenu()">Produtos</a></li>
-        <li><a href="/php/Empresa.php" onclick="toggleMenu()">Empresa</a></li>
-        <li><a href="/index.php#contactos" onclick="toggleMenu()">Contactos</a></li>
+        <li><a href="Empresa.php" onclick="toggleMenu()">Empresa</a></li>
+        <li><a href="index.html#contactos" onclick="toggleMenu()">Contactos</a></li>
         <button class="login-btn">Login</button>
     </ul>
 </nav>
